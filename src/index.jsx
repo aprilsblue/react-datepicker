@@ -281,7 +281,7 @@ export default class DatePicker extends React.Component {
     if (this.props.withPortal) {
       event.preventDefault();
     }
-    closeDate();
+    this.props.closeDate();
   };
 
   handleChange = (...allArgs) => {
