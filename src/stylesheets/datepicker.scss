@@ -16,6 +16,15 @@
   position: relative;
 }
 
+.react-datepicker-title {
+  background: $datepicker__background-color;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #548fd4;
+}
+
 .react-datepicker__triangle {
   position: absolute;
   left: 50px;
@@ -105,7 +114,7 @@
   text-align: center;
   cursor: pointer;
   position: absolute;
-  top: 10px;
+  top: 38px;
   width: 0;
   padding: 0;
   border: $datepicker__navigation-size solid transparent;
@@ -545,5 +554,28 @@
       border-left-color: $datepicker__navigation-disabled-color;
       cursor: default;
     }
+  }
+}
+
+.calendar-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 15px;
+  div {
+    display: inline-block;
+    color: white;
+    border-radius: 10px;
+    width: 50px;
+    text-align: center;
+    padding: 2.5px 0;
+    box-sizing: border-box;
+  }
+  div.calendar-delete-btn {
+    background: #adc6e2;
+    border: solid 1px rgba(65, 92, 124, 0.2);
+  }
+  div.calendar-submit-btn {
+    background-color: #548fd4;
+    border: solid 1px rgba(65, 92, 124, 0.2);
   }
 }
