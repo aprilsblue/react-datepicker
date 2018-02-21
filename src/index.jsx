@@ -539,6 +539,8 @@ export default class DatePicker extends React.Component {
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}>
         calendarTitle={this.props.calendarTitle}
         isBtnGroup={this.props.isBtnGroup}
+        submitDate={this.props.submitDate}
+        deleteDate={this.props.deleteDate}
         {this.props.children}
       </WrappedCalendar>
     );

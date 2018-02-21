@@ -545,7 +545,7 @@ export default class Calendar extends React.Component {
   render() {
     return (
       <div className={classnames("react-datepicker", this.props.className)}>
-        {this.props.calendarTitle !== null && <p className="react-datepicker-title">{this.props.calendarTitle}</p>}
+        {this.props.calendarTitle !== "" && <p className="react-datepicker-title">{this.props.calendarTitle}</p>}
         <div className="react-datepicker__triangle" />
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
