@@ -158,10 +158,10 @@ export default class DatePicker extends React.Component {
       showTimeSelect: false,
       timeIntervals: 30,
       timeCaption: "Time",
-      isBtnGroup: false,
-      calendarTitle: "",
-      submitDate() {},
-      deleteDate() {},
+      //isBtnGroup: false,
+      //calendarTitle: "",
+      //submitDate() {},
+      //deleteDate() {},
     };
   }
 
