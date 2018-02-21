@@ -128,7 +128,11 @@ export default class DatePicker extends React.Component {
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
     excludeTimes: PropTypes.array,
-    useShortMonthInDropdown: PropTypes.bool
+    useShortMonthInDropdown: PropTypes.bool,
+    calendarTtitle: PropTypes.string,
+    isBtnGroup: PropTypes.bool,
+    submitDate: PropTypes.func,
+    deleteDate: PropTypes.func,
   };
 
   static get defaultProps() {
@@ -154,6 +158,10 @@ export default class DatePicker extends React.Component {
       showTimeSelect: false,
       timeIntervals: 30,
       timeCaption: "Time",
+      isBtnGroup: false,
+      calendarTitle: "",
+      submitDate() {},
+      deleteDate() {},
     };
   }
 
@@ -529,6 +537,8 @@ export default class DatePicker extends React.Component {
         timeCaption={this.props.timeCaption}
         className={this.props.calendarClassName}
         yearDropdownItemNumber={this.props.yearDropdownItemNumber}>
+        calendarTitle={this.props.calendarTitle}
+        isBtnGroup={this.props.isBtnGroup}
         {this.props.children}
       </WrappedCalendar>
     );
@@ -615,8 +625,6 @@ export default class DatePicker extends React.Component {
         popperModifiers={this.props.popperModifiers}
         targetComponent={
           <div className="react-datepicker__input-container">
-            {this.renderDateInput()}
-            {this.renderClearButton()}
           </div>
         }
         popperContainer={this.props.popperContainer}

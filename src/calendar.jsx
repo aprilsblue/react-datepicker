@@ -104,6 +104,10 @@ export default class Calendar extends React.Component {
     setOpen: PropTypes.func,
     useShortMonthInDropdown: PropTypes.bool,
     showDisabledMonthNavigation: PropTypes.bool,
+    calendarTitle: PropTypes.string,
+    isBtnGroup: PropTypes.bool,
+    submitDate: PropTypes.func,
+    deleteDate: PropTypes.func,
   };
 
   static get defaultProps() {
@@ -112,6 +116,10 @@ export default class Calendar extends React.Component {
       monthsShown: 1,
       forceShowMonthNavigation: false,
       timeCaption: "Time",
+      calendarTitle: "",
+      isBtnGroup: false,
+      submitDate: () => {},
+      deleteDate: () => {},
     };
   }
 
@@ -519,9 +527,25 @@ export default class Calendar extends React.Component {
     }
   };
 
+  renderButtons = () => {
+    return (
+      <div className="calendar-btn-wrapper">
+        <div className="calendar-submit-btn"
+             onClick={() => this.props.submitDate(this.state.date)}>
+          저장
+        </div>
+        <div className="calendar-delete-btn"
+             onClick={() => this.props.deleteDate(this.state.date)}>
+          지우기
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className={classnames("react-datepicker", this.props.className)}>
+        {this.props.calendarTitle !== null && <p className="react-datepicker-title">{this.props.calendarTitle}</p>}
         <div className="react-datepicker__triangle" />
         {this.renderPreviousMonthButton()}
         {this.renderNextMonthButton()}
@@ -529,6 +553,7 @@ export default class Calendar extends React.Component {
         {this.renderTodayButton()}
         {this.renderTimeSection()}
         {this.props.children}
+        {this.props.isBtnGroup && this.renderButtons()}
       </div>
     );
   }
