@@ -116,10 +116,10 @@ export default class Calendar extends React.Component {
       monthsShown: 1,
       forceShowMonthNavigation: false,
       timeCaption: "Time",
-      calendarTitle: "",
-      isBtnGroup: false,
-      submitDate: () => {},
-      deleteDate: () => {},
+      //calendarTitle: "",
+      //isBtnGroup: false,
+      //submitDate: () => {},
+      //deleteDate: () => {},
     };
   }
 
