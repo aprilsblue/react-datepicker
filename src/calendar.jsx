@@ -535,7 +535,7 @@ export default class Calendar extends React.Component {
           지우기
         </div>
         <div className="calendar-submit-btn"
-             onClick={() => this.props.submitDate(this.state.date)}>
+             onClick={() => this.props.submitDate()}>
           저장
         </div>
       </div>

@@ -133,6 +133,7 @@ export default class DatePicker extends React.Component {
     isBtnGroup: PropTypes.bool,
     submitDate: PropTypes.func,
     deleteDate: PropTypes.func,
+    closeDate: PropTypes.func,
   };
 
   static get defaultProps() {
@@ -162,6 +163,7 @@ export default class DatePicker extends React.Component {
       calendarTitle: "",
       submitDate() {},
       deleteDate() {},
+      closeDate() {},
     };
   }
 
@@ -279,6 +281,7 @@ export default class DatePicker extends React.Component {
     if (this.props.withPortal) {
       event.preventDefault();
     }
+    closeDate();
   };
 
   handleChange = (...allArgs) => {
