@@ -158,10 +158,10 @@ export default class DatePicker extends React.Component {
       showTimeSelect: false,
       timeIntervals: 30,
       timeCaption: "Time",
-      //isBtnGroup: false,
-      //calendarTitle: "",
-      //submitDate() {},
-      //deleteDate() {},
+      isBtnGroup: false,
+      calendarTitle: "",
+      submitDate() {},
+      deleteDate() {},
     };
   }
 
@@ -536,11 +536,11 @@ export default class DatePicker extends React.Component {
         excludeTimes={this.props.excludeTimes}
         timeCaption={this.props.timeCaption}
         className={this.props.calendarClassName}
-        yearDropdownItemNumber={this.props.yearDropdownItemNumber}>
+        yearDropdownItemNumber={this.props.yearDropdownItemNumber}
         calendarTitle={this.props.calendarTitle}
         isBtnGroup={this.props.isBtnGroup}
         submitDate={this.props.submitDate}
-        deleteDate={this.props.deleteDate}
+        deleteDate={this.props.deleteDate}>
         {this.props.children}
       </WrappedCalendar>
     );
